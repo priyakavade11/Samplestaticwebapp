@@ -1,0 +1,28 @@
+
+@page "/fetchdata"
+
+<h3>Sample Data</h3>
+
+@if (items is null)
+{
+    <p><em>Loading…</em></p>
+}
+else
+{
+    <ul>
+        @foreach (var it in items)
+        {
+            <li>@it</li>
+        }
+    </ul>
+}
+
+@code {
+    string[]? items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(200);
+        items = new[] { "One", "Two", "Three" };
+    }
+}
