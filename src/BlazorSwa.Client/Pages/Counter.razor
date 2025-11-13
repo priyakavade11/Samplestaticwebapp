@@ -1,0 +1,10 @@
+
+@page "/counter"
+
+<h3>Counter</h3>
+<p>Current count: @count</p>
+<button class="btn" @onclick="() => count++">Click me</button>
+
+@code {
+    int count = 0;
+}
